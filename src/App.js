@@ -1,27 +1,28 @@
 // Components
 import Navbar from './components/Navbar'
-import Homepage from './pages/Home/Home'
-import Login from './pages/Login/Login'
-import Register from './pages/Register/Register'
-import Settings from './pages/Settings/Settings'
-import Single from './pages/single/Single'
-import Write from './pages/Write/Write'
+import Home from './pages/Home'
+import Login from './pages/Login'
+import Register from './pages/Register'
+import Settings from './pages/Settings'
+import Single from './pages/Single'
+import Write from './pages/Write'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 function App() {
 	const currentUser = true
+
 	return (
 		<Router>
 			<Navbar />
 			<Switch>
 				<Route exact path='/'>
-					<Homepage />
+					<Home />
 				</Route>
 				<Route path='/posts'>
-					<Homepage />
+					<Home />
 				</Route>
-				<Route path='/register'>{currentUser ? <Homepage /> : <Register />}</Route>
-				<Route path='/login'>{currentUser ? <Homepage /> : <Login />}</Route>
+				<Route path='/register'>{currentUser ? <Home /> : <Register />}</Route>
+				<Route path='/login'>{currentUser ? <Home /> : <Login />}</Route>
 				<Route path='/post/:id'>
 					<Single />
 				</Route>
